@@ -61,7 +61,7 @@ provider:
 #    - exclude-me-dir/**
 
 
-#created to tesrMailer below when trying to get ``yarn sls invoke local --function testMailer --path data.json`` to execute
+#created to testMailer below when trying to get ``yarn sls invoke local --function testMailer --path data.json`` to execute
 functions:
   staticSiteMailer:
     handler: handler.staticSiteMailer
