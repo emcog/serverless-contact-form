@@ -33,17 +33,10 @@ module.exports.staticSiteMailer = (event, context, callback) => {
   const formData = JSON.parse(event.body);
 
   sendEmail(formData, function(err, data) {
-    const response = {
-      statusCode: err ? 500 : 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'https://mindfulness4change.com',
-      },
-      body: JSON.stringify({
-        message: err ? err.message : data,
-      }),
-    };
-
-    callback(null, response);
+    if (err) {
+      console.log(err, err.stack);
+    } else {
+      console.log(data);
+    }
   });
 };

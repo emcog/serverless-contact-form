@@ -13,6 +13,11 @@
 
 service: static-site-mailer # NOTE: update this with your service name
 
+###test this once up and running
+#service:
+#  name: static-site-mailer
+ # url: https://15vbei6mk3.execute-api.eu-west-1.amazonaws.com/dev/static-site-mailer
+
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
@@ -20,6 +25,7 @@ service: static-site-mailer # NOTE: update this with your service name
 #deviated from original and condensed into one block as I was getting a duplication error
 provider:
   name: aws
+  region: eu-west-1
   runtime: nodejs8.10
   iamRoleStatements:
     - Effect: "Allow"
@@ -73,16 +79,6 @@ functions:
   #testMailer:
    # handler: handler.sendEmail
 
-
-#commented out as I was getting a duplication error
-#provider:
-#  name: aws
-#  runtime: nodejs6.10
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "ses:SendEmail"
-#      Resource: ["*"]
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
